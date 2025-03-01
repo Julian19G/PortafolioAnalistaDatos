@@ -5,6 +5,8 @@ import ContainerPage from "@/components/container";
 import GraficoEjemplo from "@/components/graficos";
 import TransitionPage from "@/components/transition-page";
 import GraficoBarra from "@/components/graficoBarra";
+import Lenguajes from "@/components/lenguajes";
+
 
 const fadeIn = {
   hidden: { opacity: 0, y: 30 },
@@ -22,7 +24,8 @@ const PortafolioPage = () => {
           <motion.h1
             className="text-4xl font-bold text-center mb-6"
             initial="hidden"
-            animate="visible"
+            whileInView="visible"
+            transition={{ duration: 0.8, ease: "easeOut" }}
             variants={fadeIn}
           >
             Mis últimos trabajos como{" "}
@@ -35,7 +38,8 @@ const PortafolioPage = () => {
           <motion.div
             className="max-w-3xl text-center"
             initial="hidden"
-            animate="visible"
+            whileInView="visible"
+            transition={{ duration: 1, ease: "easeOut" }}
             variants={fadeIn}
           >
             <h1 className="text-4xl font-bold mb-4">Primer <span className="text-blue-500">proyecto</span></h1>
@@ -56,22 +60,13 @@ const PortafolioPage = () => {
           <motion.div
             className="text-center"
             initial="hidden"
-            animate="visible"
+            whileInView="visible"
+            transition={{ duration: 1, ease: "easeOut" }}
             variants={fadeIn}
           >
             <h2 className="text-3xl font-bold mb-4">Herramientas Utilizadas</h2>
             <p className="mb-4">Para el desarrollo del modelo de predicción de la volatilidad del precio de Bitcoin, se utilizaron React y Next.js para la construcción de una interfaz web interactiva, permitiendo la visualización dinámica de los resultados a través de gráficos y dashboards. Next.js facilitó la renderización eficiente y el manejo de rutas, mejorando la experiencia del usuario. En el backend, Python fue la herramienta clave para la implementación del modelo GARCH, utilizando bibliotecas como pandas y NumPy para la manipulación de datos, y la librería arch para el modelado de series temporales. Además, se integró la API de Binance para obtener datos históricos en tiempo real, los cuales fueron analizados y procesados para generar predicciones más precisas sobre la volatilidad del mercado.</p>
-            <div className="flex gap-3 justify-center">
-              {["React", "Python", "Next.js"].map((tool, index) => (
-                <motion.div
-                  key={index}
-                  className="bg-blue-500 text-white px-4 py-2 rounded-lg text-lg font-semibold"
-                  whileHover={{ scale: 1.1 }}
-                >
-                  {tool}
-                </motion.div>
-              ))}
-            </div>
+            <Lenguajes />
           </motion.div>
         </section>
 
@@ -80,7 +75,9 @@ const PortafolioPage = () => {
           <motion.div
             className="max-w-3xl text-center"
             initial="hidden"
-            animate="visible"
+            whileInView="visible"
+            transition={{ duration: 1, ease: "easeOut" }}
+
             variants={fadeIn}
           >
             <h2 className="text-3xl font-bold mb-4">
@@ -96,7 +93,9 @@ const PortafolioPage = () => {
           <motion.div
             className="max-w-3xl text-center"
             initial="hidden"
-            animate="visible"
+            whileInView="visible"
+            transition={{ duration: 1, ease: "easeOut" }}
+
             variants={fadeIn}
           >
             <h2 className="text-3xl font-bold mt-8 mb-4">
